@@ -3,7 +3,6 @@ from enum import Enum
 
 from fastapi import UploadFile
 
-from database import Image
 from image_repository import save_image
 
 
@@ -13,7 +12,7 @@ class ImageAnalysisState(Enum):
     FINISHED = "finished"
 
 
-async def analyze(image: Image):
+async def analyze(image):
     print("analyzing images")
     await asyncio.sleep(10)
     return image
